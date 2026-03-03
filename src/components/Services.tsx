@@ -10,7 +10,7 @@ export default function Services() {
         {
             title: t('srv1_title'),
             description: t('srv1_desc'),
-            image: "https://images.unsplash.com/photo-1635773054009-80b62e4a6016?w=600&auto=format&fit=crop"
+            image: "https://images.pexels.com/photos/4116193/pexels-photo-4116193.jpeg"
         },
         {
             title: t('srv2_title'),
@@ -25,7 +25,7 @@ export default function Services() {
         {
             title: t('srv4_title'),
             description: t('srv4_desc'),
-            image: "https://images.unsplash.com/photo-1632823471565-3cefc4c20531?w=600&auto=format&fit=crop"
+            image: "https://https://unsplash.com/fr/photos/homme-faisant-le-plein-dhuile-moteur-sur-le-compartiment-moteur-de-la-voiture-V37iTrYZz2E"
         },
         {
             title: t('srv5_title'),
