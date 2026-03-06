@@ -20,17 +20,17 @@ export default function Services() {
         {
             title: t('srv3_title'),
             description: t('srv3_desc'),
-            image: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&auto=format&fit=crop"
+            image: "https://unsplash.com/fr/photos/photo-recadree-dune-femelle-serrant-une-noix-avec-une-cle-OOY5kdikxF8"
         },
         {
             title: t('srv4_title'),
             description: t('srv4_desc'),
-            image: "https://unsplash.com/fr/photos/homme-faisant-le-plein-dhuile-moteur-sur-le-compartiment-moteur-de-la-voiture-V37iTrYZz2E"
+            image: "https://tse1.mm.bing.net/th/id/OIP.Awwji9K6CN8QrYGJMnG7NgHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
         },
         {
             title: t('srv5_title'),
             description: t('srv5_desc'),
-            image: "https://images.unsplash.com/photo-1563720223185-11003d516935?w=600&auto=format&fit=crop"
+            image: "https://unsplash.com/fr/photos/outil-a-main-a-manche-noir-et-marron-ovGrEUgrkyE"
         },
         {
             title: t('srv6_title'),

@@ -1,12 +1,71 @@
 'use client';
-import { useState, useEffect } from 'react';
-import { Menu, X, Wrench, Globe } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Menu, X, Wrench, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+
+function LanguageSelector() {
+    const [isOpen, setIsOpen] = useState(false);
+    const { language, setLanguage, isRtl } = useLanguage();
+    const menuRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    const flags: Record<string, string> = {
+        fr: '🇫🇷',
+        ar: '🇲🇦',
+        en: '🇺🇸',
+    };
+
+    const langNames: Record<string, string> = {
+        fr: 'Français',
+        ar: 'العربية',
+        en: 'English'
+    };
+
+    return (
+        <div className="relative" ref={menuRef}>
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex items-center gap-2 justify-center px-3 h-10 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors border border-white/10"
+                aria-label="Select language"
+            >
+                <span className="text-xl">{flags[language as string]}</span>
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            {isOpen && (
+                <div className={`absolute top-full mt-2 ${isRtl ? 'left-0' : 'right-0'} bg-[#121212] border border-white/10 rounded-xl shadow-2xl py-2 min-w-[150px] overflow-hidden`}>
+                    {Object.entries(flags).map(([code, flag]) => (
+                        <button
+                            key={code}
+                            onClick={() => {
+                                setLanguage(code as 'fr' | 'ar' | 'en');
+                                setIsOpen(false);
+                            }}
+                            className={`w-full flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 transition-colors ${language === code ? 'text-meca-red bg-white/5' : 'text-gray-300'}`}
+                        >
+                            <span className="text-xl">{flag}</span>
+                            <span className="font-medium text-sm">{langNames[code]}</span>
+                        </button>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+}
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const { language, setLanguage, t, isRtl } = useLanguage();
+    const { t } = useLanguage();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -23,31 +82,9 @@ export default function Navbar() {
         { name: t('nav_contact'), href: '#contact' },
     ];
 
-    const flags: Record<string, string> = {
-        fr: '🇫🇷',
-        ar: '🇲🇦',
-        en: '🇺🇸',
-    };
-
-    const nextLang: Record<string, 'fr' | 'ar' | 'en'> = {
-        fr: 'ar',
-        ar: 'en',
-        en: 'fr'
-    };
-
-    const langNames: Record<string, string> = {
-        fr: 'العربية',
-        ar: 'English',
-        en: 'Français'
-    };
-
-    const toggleLanguage = () => {
-        setLanguage(nextLang[language as string] || 'fr');
-    };
-
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass py-4' : 'bg-transparent py-6'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-meca-darker border-b border-white/10 py-4 shadow-lg' : 'bg-transparent py-6'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,17 +113,8 @@ export default function Navbar() {
                             ))}
                         </div>
 
-                        {/* Language Toggle */}
-                        <button
-                            onClick={toggleLanguage}
-                            className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors border border-white/10 group"
-                            aria-label="Toggle language"
-                        >
-                            <span className="text-xl group-hover:scale-110 transition-transform">{flags[language as string]}</span>
-                            <span className="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-xs bg-black px-2 py-1 rounded text-white whitespace-nowrap">
-                                {langNames[language as string]}
-                            </span>
-                        </button>
+                        {/* Language Selector Pop-up */}
+                        <LanguageSelector />
 
                         <a
                             href="#contact"
@@ -98,12 +126,7 @@ export default function Navbar() {
 
                     {/* Mobile Menu Button & Language (Mobile) */}
                     <div className="md:hidden flex items-center gap-4">
-                        <button
-                            onClick={toggleLanguage}
-                            className="flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-white"
-                        >
-                            <span className="text-xl">{flags[language as string]}</span>
-                        </button>
+                        <LanguageSelector />
 
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
