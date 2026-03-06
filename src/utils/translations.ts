@@ -41,6 +41,8 @@ export const translations = {
         srv4_desc: "Vidange d'huile, changement des filtres et vérification des niveaux rapides et efficaces.",
         srv5_title: "Électricité Automobile",
         srv5_desc: "Réparation de systèmes électriques, batteries, démarreurs, alternateurs et faisceaux.",
+        srv6_title: "Système Anti-Pollution",
+        srv6_desc: "Diagnostic et réparation des systèmes FAP, vanne EGR et AdBlue pour réduire les émissions et garantir les performances du moteur.",
         services_learn_more: "Savoir plus",
 
         // Contact
@@ -100,6 +102,8 @@ export const translations = {
         srv4_desc: "تغيير الزيت والفلاتر وفحص المستويات بسرعة وفعالية.",
         srv5_title: "كهرباء السيارات",
         srv5_desc: "إصلاح الأنظمة الكهربائية والبطاريات والمولدات والأسلاك.",
+        srv6_title: "نظام منع التلوث",
+        srv6_desc: "تشخيص وإصلاح أنظمة مرشحات جزيئات الديزل وصمامات إعادة تدوير غاز العادم وAdBlue لتقليل الانبعاثات وضمان أداء المحرك.",
         services_learn_more: "قراءة المزيد",
 
         // Contact
@@ -116,8 +120,69 @@ export const translations = {
 
         // Footer
         footer_rights: "ميكاسترا لميكانيكا السيارات. جميع الحقوق محفوظة."
+    },
+    en: {
+        // Navbar
+        nav_home: "Home",
+        nav_services: "Services",
+        nav_about: "About",
+        nav_contact: "Contact",
+        nav_cta: "Book an Appointment",
+
+        // Hero
+        hero_title_1: "Your Trusted Garage in",
+        hero_title_2: "Temara",
+        hero_subtitle: "Maintenance and repair of all vehicle brands. Accurate diagnostics, fast services, and professional expertise for your safety on the road.",
+        hero_cta_primary: "Contact Us",
+        hero_cta_secondary: "View Our Services",
+        hero_scroll: "Discover",
+
+        // About
+        about_badge: "About Us",
+        about_title: "Why choose MECASTRA?",
+        about_desc: "At MECASTRA, we focus on quality, transparency, and customer satisfaction. Trust our expertise to keep your vehicle in excellent condition and drive safely.",
+        about_feat1_title: "Qualified Team",
+        about_feat1_desc: "Expert mechanics in continuous training to master the latest technologies.",
+        about_feat2_title: "Total Transparency",
+        about_feat2_desc: "Clear quotes before any intervention. No bad surprises on your bill.",
+        about_feat3_title: "Fast & Reliable",
+        about_feat3_desc: "We respect the agreed deadlines to allow you to get back on the road quickly.",
+        about_years: "Years of<br/>experience",
+
+        // Services
+        services_badge: "Expertise",
+        services_title: "Our Professional Services",
+        services_desc: "A complete range of car maintenance and repair services tailored to your needs.",
+        srv1_title: "Auto Diagnostics",
+        srv1_desc: "Accurate identification of electronic and mechanical faults with our state-of-the-art equipment.",
+        srv2_title: "Engine Repair",
+        srv2_desc: "Complete maintenance, overhaul, and repair of petrol and diesel engines for all brands.",
+        srv3_title: "Brakes & Suspension",
+        srv3_desc: "Replacement of pads, discs, and shock absorbers to ensure your safety on the road.",
+        srv4_title: "Oil Change & Maintenance",
+        srv4_desc: "Oil change, filter replacement, and fluid level checks done quickly and efficiently.",
+        srv5_title: "Auto Electricity",
+        srv5_desc: "Repair of electrical systems, batteries, starters, alternators, and wiring harnesses.",
+        srv6_title: "Anti-Pollution System",
+        srv6_desc: "Diagnostic and repair of DPF, EGR valve, and AdBlue systems to reduce emissions and ensure engine performance.",
+        services_learn_more: "Learn more",
+
+        // Contact
+        contact_badge: "Contact",
+        contact_title: "Visit Us",
+        contact_desc: "Book your appointment today. Our team is available to advise you and take care of your vehicle.",
+        contact_info_title: "Contact Information",
+        contact_phone: "Phone",
+        contact_address: "Address",
+        contact_address_val: "Temara, Morocco",
+        contact_hours: "Business Hours",
+        contact_hours_val: "Mon - Sat: 8:30 AM - 6:30 PM",
+        contact_whatsapp: "Contact Us on WhatsApp",
+
+        // Footer
+        footer_rights: "MECASTRA Auto Mechanics. All rights reserved."
     }
 };
 
-export type Language = 'fr' | 'ar';
+export type Language = 'fr' | 'ar' | 'en';
 export type TranslationKey = keyof typeof translations.fr;

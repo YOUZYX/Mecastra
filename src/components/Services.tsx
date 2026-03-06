@@ -25,12 +25,17 @@ export default function Services() {
         {
             title: t('srv4_title'),
             description: t('srv4_desc'),
-            image: "https://https://unsplash.com/fr/photos/homme-faisant-le-plein-dhuile-moteur-sur-le-compartiment-moteur-de-la-voiture-V37iTrYZz2E"
+            image: "https://unsplash.com/fr/photos/homme-faisant-le-plein-dhuile-moteur-sur-le-compartiment-moteur-de-la-voiture-V37iTrYZz2E"
         },
         {
             title: t('srv5_title'),
             description: t('srv5_desc'),
             image: "https://images.unsplash.com/photo-1563720223185-11003d516935?w=600&auto=format&fit=crop"
+        },
+        {
+            title: t('srv6_title'),
+            description: t('srv6_desc'),
+            image: "https://tse4.mm.bing.net/th/id/OIP.qn8LFd4Rfk86vB7NuUW09QHaEK?w=2494&h=1401&rs=1&pid=ImgDetMain&o=7&rm=3"
         }
     ];
 

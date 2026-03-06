@@ -23,8 +23,26 @@ export default function Navbar() {
         { name: t('nav_contact'), href: '#contact' },
     ];
 
+    const flags: Record<string, string> = {
+        fr: '🇫🇷',
+        ar: '🇲🇦',
+        en: '🇺🇸',
+    };
+
+    const nextLang: Record<string, 'fr' | 'ar' | 'en'> = {
+        fr: 'ar',
+        ar: 'en',
+        en: 'fr'
+    };
+
+    const langNames: Record<string, string> = {
+        fr: 'العربية',
+        ar: 'English',
+        en: 'Français'
+    };
+
     const toggleLanguage = () => {
-        setLanguage(language === 'fr' ? 'ar' : 'fr');
+        setLanguage(nextLang[language as string] || 'fr');
     };
 
     return (
@@ -64,9 +82,9 @@ export default function Navbar() {
                             className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors border border-white/10 group"
                             aria-label="Toggle language"
                         >
-                            <Globe className="w-5 h-5 group-hover:text-meca-red transition-colors" />
-                            <span className="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-xs bg-black px-2 py-1 rounded text-white">
-                                {language === 'fr' ? 'العربية' : 'Français'}
+                            <span className="text-xl group-hover:scale-110 transition-transform">{flags[language as string]}</span>
+                            <span className="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-xs bg-black px-2 py-1 rounded text-white whitespace-nowrap">
+                                {langNames[language as string]}
                             </span>
                         </button>
 
@@ -84,7 +102,7 @@ export default function Navbar() {
                             onClick={toggleLanguage}
                             className="flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-white"
                         >
-                            <span className="text-xs font-bold">{language === 'fr' ? 'AR' : 'FR'}</span>
+                            <span className="text-xl">{flags[language as string]}</span>
                         </button>
 
                         <button
