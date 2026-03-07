@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
-import { Menu, X, Wrench, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 function LanguageSelector() {
@@ -91,11 +91,8 @@ export default function Navbar() {
                 <div className="flex justify-between items-center">
                     {/* Logo */}
                     <div className="flex items-center">
-                        <a href="#accueil" className="flex items-center gap-2 group">
-                            <div className="p-2 bg-meca-red rounded-lg group-hover:scale-110 transition-transform">
-                                <Wrench className="w-6 h-6 text-white" />
-                            </div>
-                            <span className="text-xl font-bold tracking-wider text-white">MECASTRA</span>
+                        <a href="#accueil" className="flex items-center group">
+                            <img src="/mecastra.png" alt="MECASTRA Logo" className="h-[40px] md:h-[80px] w-auto object-contain group-hover:scale-105 transition-transform" />
                         </a>
                     </div>
 

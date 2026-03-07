@@ -58,7 +58,7 @@ export const translations = {
         contact_whatsapp: "Nous Contacter sur WhatsApp",
 
         // Footer
-        footer_rights: "MECASTRA Mécanique Automobile. Tous droits réservés."
+        footer_rights: "Mécanique Automobile. Tous droits réservés."
     },
     ar: {
         // Navbar
@@ -180,7 +180,7 @@ export const translations = {
         contact_whatsapp: "Contact Us on WhatsApp",
 
         // Footer
-        footer_rights: "MECASTRA Auto Mechanics. All rights reserved."
+        footer_rights: "Auto Mechanics. All rights reserved."
     }
 };
 
