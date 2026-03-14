@@ -10,12 +10,12 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-    theme: 'light',
+    theme: 'dark',
     toggleTheme: () => {},
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-    const [theme, setTheme] = useState<Theme>('light');
+    const [theme, setTheme] = useState<Theme>('dark');
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -25,13 +25,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         if (stored) {
             // eslint-disable-next-line react-hooks/set-state-in-effect
             setTheme(stored);
-            if (stored === 'dark') {
-                document.documentElement.classList.add('dark');
-            } else {
+            if (stored === 'light') {
                 document.documentElement.classList.remove('dark');
+            } else {
+                document.documentElement.classList.add('dark');
             }
         } else {
-            document.documentElement.classList.remove('dark');
+            // Ensure default is dark if no previously saved mode
+            document.documentElement.classList.add('dark');
         }
     }, []);
 
@@ -39,17 +40,17 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         setTheme((prev) => {
             const next = prev === 'dark' ? 'light' : 'dark';
             localStorage.setItem('theme', next);
-            if (next === 'dark') {
-                document.documentElement.classList.add('dark');
-            } else {
+            if (next === 'light') {
                 document.documentElement.classList.remove('dark');
+            } else {
+                document.documentElement.classList.add('dark');
             }
             return next;
         });
     };
 
     return (
-        <ThemeContext.Provider value={{ theme: mounted ? theme : 'light', toggleTheme }}>
+        <ThemeContext.Provider value={{ theme: mounted ? theme : 'dark', toggleTheme }}>
             {children}
         </ThemeContext.Provider>
     );

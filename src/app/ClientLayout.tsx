@@ -20,7 +20,7 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
     const { language, isRtl } = useLanguage();
 
     return (
-        <html lang={language} dir={isRtl ? 'rtl' : 'ltr'} className="scroll-smooth">
+        <html lang={language} dir={isRtl ? 'rtl' : 'ltr'} className="scroll-smooth dark">
             <body
                 className={`${isRtl ? arabic.variable : inter.variable} ${isRtl ? 'font-arabic' : 'font-sans'} antialiased`}
             >
