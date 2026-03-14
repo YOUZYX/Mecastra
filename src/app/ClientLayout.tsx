@@ -2,6 +2,7 @@
 
 import { Inter, Noto_Kufi_Arabic } from "next/font/google";
 import { useLanguage } from "@/context/LanguageContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 import "./globals.css";
 import { ReactNode } from "react";
 
@@ -23,7 +24,9 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
             <body
                 className={`${isRtl ? arabic.variable : inter.variable} ${isRtl ? 'font-arabic' : 'font-sans'} antialiased`}
             >
-                {children}
+                <ThemeProvider>
+                    {children}
+                </ThemeProvider>
             </body>
         </html>
     );

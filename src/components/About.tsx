@@ -25,7 +25,7 @@ export default function About() {
     ];
 
     return (
-        <section id="a-propos" className="py-24 bg-meca-darker relative">
+        <section id="a-propos" className="py-24 bg-gray-50 dark:bg-meca-darker relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -36,20 +36,20 @@ export default function About() {
                         transition={{ duration: 0.8 }}
                     >
                         <h2 className="text-sm font-bold tracking-widest text-meca-red uppercase mb-3">{t('about_badge')}</h2>
-                        <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-6">{t('about_title')}</h3>
-                        <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                        <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-6">{t('about_title')}</h3>
+                        <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
                             {t('about_desc')}
                         </p>
 
                         <div className="space-y-6">
                             {features.map((feature, index) => (
                                 <div key={index} className="flex items-start gap-4">
-                                    <div className="mt-1 p-3 bg-white/5 rounded-xl border border-white/10">
+                                    <div className="mt-1 p-3 bg-gray-200 dark:bg-white/5 rounded-xl border border-gray-300 dark:border-white/10">
                                         {feature.icon}
                                     </div>
                                     <div>
-                                        <h4 className="text-xl font-bold text-white mb-2">{feature.title}</h4>
-                                        <p className="text-gray-400">{feature.description}</p>
+                                        <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{feature.title}</h4>
+                                        <p className="text-gray-600 dark:text-gray-400">{feature.description}</p>
                                     </div>
                                 </div>
                             ))}
@@ -64,15 +64,15 @@ export default function About() {
                         transition={{ duration: 0.8 }}
                         className="relative h-[600px] hidden lg:block"
                     >
-                        <div className="absolute top-0 right-0 w-4/5 h-4/5 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                        <div className="absolute top-0 right-0 w-4/5 h-4/5 rounded-2xl overflow-hidden border border-gray-300 dark:border-white/10 shadow-2xl">
                             <img
                                 src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=1000&auto=format&fit=crop"
                                 alt="Mechanic working on car"
                                 className="w-full h-full object-cover"
                             />
-                            <div className="absolute inset-0 bg-meca-darker/20"></div>
+                            <div className="absolute inset-0 bg-transparent dark:bg-meca-darker/20"></div>
                         </div>
-                        <div className="absolute bottom-0 left-0 w-3/5 h-3/5 rounded-2xl overflow-hidden border-4 border-meca-darker shadow-2xl z-10">
+                        <div className="absolute bottom-0 left-0 w-3/5 h-3/5 rounded-2xl overflow-hidden border-4 border-white dark:border-meca-darker shadow-2xl z-10">
                             <img
                                 src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1000&auto=format&fit=crop"
                                 alt="Diagnostic"

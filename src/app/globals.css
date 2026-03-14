@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 @theme {
   --color-meca-dark: #121212;
   --color-meca-darker: #0a0a0a;
@@ -14,6 +16,11 @@
 }
 
 :root {
+  --background: #ffffff;
+  --foreground: #121212;
+}
+
+:root.dark {
   --background: var(--color-meca-darker);
   --foreground: #ffffff;
 }

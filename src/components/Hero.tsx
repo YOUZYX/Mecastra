@@ -14,9 +14,9 @@ export default function Hero() {
                     alt="Modern Auto Repair Shop"
                     className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-meca-darker/80 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-white/70 dark:bg-meca-darker/80 mix-blend-multiply"></div>
                 {/* Gradient fade to bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-meca-darker via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-white via-black to-white dark:bg-gradient-to-t dark:from-meca-darker dark:via-transparent dark:to-transparent opacity-90 dark:opacity-100"></div>
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
@@ -57,7 +57,7 @@ export default function Hero() {
                 transition={{ delay: 1, duration: 1 }}
                 className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2"
             >
-                <span className="text-sm text-gray-400 uppercase tracking-widest">{t('hero_scroll')}</span>
+                <span className="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-widest">{t('hero_scroll')}</span>
                 <div className="w-[1px] h-12 bg-gradient-to-b from-meca-red to-transparent"></div>
             </motion.div>
         </section>

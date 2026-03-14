@@ -40,7 +40,7 @@ export default function Services() {
     ];
 
     return (
-        <section id="services" className="py-24 bg-meca-dark relative overflow-hidden">
+        <section id="services" className="py-24 bg-white dark:bg-meca-dark relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 <div className="text-center max-w-3xl mx-auto mb-16">
@@ -51,8 +51,8 @@ export default function Services() {
                         transition={{ duration: 0.6 }}
                     >
                         <h2 className="text-sm font-bold tracking-widest text-meca-red uppercase mb-3">{t('services_badge')}</h2>
-                        <h3 className="text-3xl md:text-5xl font-extrabold text-white mb-6">{t('services_title')}</h3>
-                        <p className="text-gray-400 text-lg">
+                        <h3 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6">{t('services_title')}</h3>
+                        <p className="text-gray-600 dark:text-gray-400 text-lg">
                             {t('services_desc')}
                         </p>
                     </motion.div>
@@ -66,7 +66,7 @@ export default function Services() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             key={index}
-                            className="group bg-meca-darker rounded-2xl overflow-hidden border border-white/5 hover:border-white/10 transition-all hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)] flex flex-col h-full"
+                            className="group bg-gray-50 dark:bg-meca-darker rounded-2xl overflow-hidden border border-gray-200 dark:border-white/5 hover:border-gray-300 dark:hover:border-white/10 transition-all hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)] flex flex-col h-full"
                         >
                             {/* Image Container with Zoom effect */}
                             <div className="h-64 overflow-hidden relative">
@@ -80,14 +80,14 @@ export default function Services() {
 
                             {/* Content */}
                             <div className="p-8 flex-1 flex flex-col">
-                                <h4 className="text-2xl font-bold text-white mb-3 group-hover:text-meca-red transition-colors">
+                                <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-meca-red transition-colors">
                                     {service.title}
                                 </h4>
-                                <p className="text-gray-400 mb-6 flex-1">
+                                <p className="text-gray-600 dark:text-gray-400 mb-6 flex-1">
                                     {service.description}
                                 </p>
                                 <div className="mt-auto">
-                                    <a href="#contact" className="inline-flex items-center text-meca-silver group-hover:text-white font-semibold transition-colors">
+                                    <a href="#contact" className="inline-flex items-center text-gray-500 dark:text-meca-silver group-hover:text-gray-900 dark:group-hover:text-white font-semibold transition-colors">
                                         {t('services_learn_more')} <ArrowRight className={`w-5 h-5 ${isRtl ? 'mr-2 rotate-180 transform group-hover:-translate-x-1' : 'ml-2 transform group-hover:translate-x-1'} transition-transform`} />
                                     </a>
                                 </div>

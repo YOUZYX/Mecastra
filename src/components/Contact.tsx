@@ -7,7 +7,7 @@ export default function Contact() {
     const { t, isRtl } = useLanguage();
 
     return (
-        <section id="contact" className="py-24 bg-meca-darker relative border-t border-white/5">
+        <section id="contact" className="py-24 bg-white dark:bg-meca-darker relative border-t border-gray-200 dark:border-white/5">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <motion.div
@@ -17,14 +17,14 @@ export default function Contact() {
                         transition={{ duration: 0.6 }}
                     >
                         <h2 className="text-sm font-bold tracking-widest text-meca-red uppercase mb-3">{t('contact_badge')}</h2>
-                        <h3 className="text-4xl md:text-5xl font-extrabold text-white mb-6">{t('contact_title')}</h3>
-                        <p className="text-gray-400 text-lg">
+                        <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6">{t('contact_title')}</h3>
+                        <p className="text-gray-600 dark:text-gray-400 text-lg">
                             {t('contact_desc')}
                         </p>
                     </motion.div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-meca-dark rounded-3xl overflow-hidden border border-white/5 shadow-2xl">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-gray-50 dark:bg-meca-dark rounded-3xl overflow-hidden border border-gray-200 dark:border-white/5 shadow-xl dark:shadow-2xl">
                     {/* Left Side (Contact Info) */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
@@ -33,44 +33,44 @@ export default function Contact() {
                         transition={{ duration: 0.8 }}
                         className="p-10 md:p-14 flex flex-col justify-center"
                     >
-                        <h4 className="text-3xl font-bold text-white mb-8">{t('contact_info_title')}</h4>
+                        <h4 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">{t('contact_info_title')}</h4>
 
                         <div className="space-y-8 mb-12">
                             <div className="flex items-start gap-4 group">
-                                <div className="p-4 bg-white/5 rounded-full text-meca-red group-hover:bg-meca-red group-hover:text-white transition-colors duration-300">
+                                <div className="p-4 bg-white dark:bg-white/5 shadow-sm dark:shadow-none rounded-full text-meca-red group-hover:bg-meca-red group-hover:text-white transition-colors duration-300">
                                     <Phone className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <h5 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-1">{t('contact_phone')}</h5>
-                                    <a href="tel:+212600000000" className={`text-2xl font-bold text-white hover:text-meca-red transition-colors block ${isRtl ? 'dir-ltr text-right' : ''}`}>
-                                        +212 6 XX XX XX XX
+                                    <h5 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1">{t('contact_phone')}</h5>
+                                    <a href="tel:+212 604-771636" className={`text-2xl font-bold text-gray-900 dark:text-white hover:text-meca-red transition-colors block ${isRtl ? 'dir-ltr text-right' : ''}`}>
+                                        +212 604-771636
                                     </a>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-4 group">
-                                <div className="p-4 bg-white/5 rounded-full text-meca-red group-hover:bg-meca-red group-hover:text-white transition-colors duration-300">
+                                <div className="p-4 bg-white dark:bg-white/5 shadow-sm dark:shadow-none rounded-full text-meca-red group-hover:bg-meca-red group-hover:text-white transition-colors duration-300">
                                     <MapPin className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <h5 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-1">{t('contact_address')}</h5>
-                                    <p className="text-xl font-bold text-white">{t('contact_address_val')}</p>
+                                    <h5 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1">{t('contact_address')}</h5>
+                                    <p className="text-xl font-bold text-gray-900 dark:text-white">{t('contact_address_val')}</p>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-4 group">
-                                <div className="p-4 bg-white/5 rounded-full text-meca-red group-hover:bg-meca-red group-hover:text-white transition-colors duration-300">
+                                <div className="p-4 bg-white dark:bg-white/5 shadow-sm dark:shadow-none rounded-full text-meca-red group-hover:bg-meca-red group-hover:text-white transition-colors duration-300">
                                     <Clock className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <h5 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-1">{t('contact_hours')}</h5>
-                                    <p className="text-xl font-bold text-white">{t('contact_hours_val')}</p>
+                                    <h5 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1">{t('contact_hours')}</h5>
+                                    <p className="text-xl font-bold text-gray-900 dark:text-white">{t('contact_hours_val')}</p>
                                 </div>
                             </div>
                         </div>
 
                         <a
-                            href="https://wa.me/212600000000"
+                            href="https://wa.me/212604771636"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group flex justify-center items-center gap-3 w-full py-4 px-8 bg-[#25D366] hover:bg-[#1ebd5a] text-white rounded-xl font-bold text-lg transition-all transform hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(37,211,102,0.3)]"
